@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+
+  <name>Skycut Command D24-v4</name>
+  <id>skycut_command_d24_v4</id>
+
+  <param name="tab" type="notebook">
+
+    <!-- ================= SETTINGS TAB ================= -->
+    <page name="settings" gui-text="Settings">
+
+    <vbox>
+
+      <!-- ================= MAIN 4-COLUMN LAYOUT ================= -->
+      <hbox>
+
+        <!-- ===== COLUMN 1: LEFT TOOL ===== -->
+        <vbox>
+
+          <label appearance="header">Left Tool Settings</label>
+
+          <param name="left_cut_pressure" type="int" min="1" max="160" gui-text="Full Cut Pressure (!FS)">5</param>
+          <param name="left_score_pressure" type="int" min="1" max="160" gui-text="Kiss Cut Pressure (!FS)">5</param>
+          <param name="left_crease-draw_pressure" type="int" min="1" max="160" gui-text="Crease / Draw Pressure (!FS)">5</param>
+          <param name="left_speed" type="int" min="1" max="12" gui-text="Speed (VS)">5</param>
+          <param name="left_up_speed" type="int" min="1" max="12" gui-text="Up Speed (US)">5</param>
+
+
+          <param name="left_offset_mm"
+                 type="float"
+                 min="0"
+                 max="2"
+                 precision="2"
+                 gui-text="Offset (mm)">0.30</param>
+
+          <param name="left_overcut_mm"
+                 type="float"
+                 min="0"
+                 max="2"
+                 precision="2"
+                 gui-text="Overcut (mm)">1.00</param>
+
+          <param name="left_passes"
+                 type="int"
+                 min="1"
+                 max="10"
+                 gui-text="Passes">1</param>
+
+          <spacer/>
+          <separator/>
+          <spacer/>
+
+          <label appearance="header">Left Tool Task Selection</label>
+
+          <param name="left_tool_layer"
+                 type="optiongroup"
+                 gui-text="Tool">
+            <option value="cut">Full Cut</option>
+            <option value="score">Kiss Cut</option>
+            <option value="cut_score">Full Cut &amp; Kiss Cut</option>
+            <option value="crease">Crease Tool</option>
+            <option value="draw">Draw</option>
+            <option value="none">None</option>
+          </param>
+
+          <spacer/>
+          <separator/>
+          <spacer/>
+
+          <label appearance="header">Cut Mode</label>
+
+          <param name="cut_mode"
+                 type="optiongroup"
+                 gui-text="">
+
+            <option value="origin">Origin Point</option>
+            <option value="wysiwyg">WYSIWYG</option>
+            <option value="contourcut">Contour Cut</option>
+
+          </param>
+
+        </vbox>
+
+        <spacer/><spacer/><spacer/>
+        <separator/>
+        <spacer/><spacer/><spacer/>
+
+        <!-- ===== COLUMN 2: RIGHT TOOL ===== -->
+        <vbox>
+
+          <label appearance="header">Right Tool Settings</label>
+
+          <param name="right_cut_pressure" type="int" min="1" max="160" gui-text="Full Cut Pressure (!FS)">5</param>
+          <param name="right_score_pressure" type="int" min="1" max="160" gui-text="Kiss Cut Pressure (!FS)">5</param>
+          <param name="right_crease-draw_pressure" type="int" min="1" max="160" gui-text="Crease / Draw Pressure (!FS)">5</param>
+          <param name="right_speed" type="int" min="1" max="12" gui-text="Speed (VS)">5</param>
+          <param name="right_up_speed" type="int" min="1" max="12" gui-text="Up Speed (US)">5</param>
+
+
+          <param name="right_offset_mm"
+                 type="float"
+                 min="0"
+                 max="2"
+                 precision="2"
+                 gui-text="Offset (mm)">0.00</param>
+
+          <param name="right_overcut_mm"
+                 type="float"
+                 min="0"
+                 max="2"
+                 precision="2"
+                 gui-text="Overcut (mm)">0.00</param>
+
+          <param name="right_passes"
+                 type="int"
+                 min="1"
+                 max="10"
+                 gui-text="Passes">1</param>
+
+          <spacer/>
+          <separator/>
+          <spacer/>
+
+          <label appearance="header">Right Task Selection</label>
+
+          <param name="right_tool_layer"
+                 type="optiongroup"
+                 gui-text="Tool">
+            <option value="cut">Full Cut</option>
+            <option value="score">Kiss Cut</option>
+            <option value="cut_score">Full Cut &amp; Kiss Cut</option>
+            <option value="crease">Crease Tool</option>
+            <option value="draw">Draw</option>
+            <option value="none">None</option>
+          </param>
+
+          <spacer/>
+          <separator/>
+          <spacer/>
+
+          <label appearance="header">Operation Mode</label>
+
+          <param name="operation_mode"
+                 type="optiongroup"
+                 gui-text="">
+
+            <option value="left_first">L Tool &gt; R Tool</option>
+            <option value="right_first">R Tool &gt; L Tool</option>
+
+          </param>
+
+        </vbox>
+
+        <spacer/><spacer/>
+        <vbox>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+          <label>│</label>
+        </vbox>
+        <spacer/><spacer/>
+
+        <!-- ===== COLUMN 3: ACTION+MARKS ROW, THEN USB/WiFi/DEVELOPER ROW ===== -->
+        <vbox>
+
+          <hbox>
+
+            <vbox>
+
+              <label appearance="header">Action</label>
+
+              <param name="output_mode"
+                     type="optiongroup"
+                     gui-text="">
+                <option value="send">Send to Machine Wifi</option>
+                <option value="send_usb">Send to Machine USB</option>
+                <option value="save_plt">Save PLT File Only</option>
+                <option value="preview_path">Preview Path</option>
+                <option value="preview_web">Preview Path in Web Browser</option>
+                <option value="layer_setup">Layer Setup</option>
+                <option value="add_marks">Add Marks</option>
+              </param>
+
+            </vbox>
+
+            <spacer/><spacer/><spacer/>
+
+            <vbox>
+
+              <label appearance="header">Marks Setting</label>
+              <label>Mark Placement</label>
+              <param name="mark_mode"
+                     type="optiongroup"
+                     appearance="radio"
+                     gui-text="&#160;&#160;&#160;">
+                <option value="objects">Offset from Objects</option>
+                <option value="page">Inset from Page Border</option>
+              </param>
+
+              <param name="mark_distance_mm"
+                     type="float"
+                     min="0"
+                     max="100"
+                     gui-text="Offset / Inset (mm)">5.0</param>
+
+              <param name="mark_arm_mm"
+                     type="float"
+                     min="1"
+                     max="100"
+                     gui-text="Mark Arm Length (mm)">10.0</param>
+
+              <param name="mark_stroke_mm"
+                     type="float"
+                     min="0"
+                     max="10"
+                     gui-text="Stroke Width (mm)">1.0</param>
+
+            </vbox>
+
+          </hbox>
+
+          <spacer/>
+          <separator/>
+          <spacer/>
+
+          <hbox>
+
+            <vbox>
+
+              <label appearance="header">USB</label>
+
+              <param name="usb_device_path"
+                     type="string"
+                     gui-text="Device Path"
+                     visible="output_mode = 'send_usb'"></param>
+
+              <label>Blank = auto-detect via popup. Or enter a short</label>
+              <label>label, e.g. skycut_5503, to send directly.</label>
+
+            
+
+            <spacer/><spacer/><spacer/>
+
+           
+
+              <label appearance="header">WiFi</label>
+
+              <param name="ip"
+                     type="string"
+                     gui-text="IP Address"
+                     max-length="15"
+                     visible="output_mode = 'send'">192.168.16.200</param>
+
+              <param name="port"
+                     type="int"
+                     min="1"
+                     max="65535"
+                     gui-text="Port"
+                     visible="output_mode = 'send'">8080</param>
+
+        
+
+            <spacer/><spacer/><spacer/>
+
+        
+
+              <label appearance="header">Developer</label>
+
+              <param name="preview_enable"
+                     type="bool"
+                     gui-text="Create Preview Layer">false</param>
+
+            </vbox>
+
+          </hbox>
+
+        </vbox>
+
+      </hbox>
+
+    </vbox>
+
+    </page>
+
+    <!-- ================= LAYER SELECTION HELP TAB ================= -->
+    <page name="help_layer_selection" gui-text="Layer Selection">
+
+    <vbox>
+
+      <image width="441" height="185">images/Layer_Selection_441x185 .png</image>
+
+      <param name="help_ls1" type="description">
+Left Tool and Right Tool each assign a physical tool head to one or more of the layers below. Whatever object type is loaded in that head determines which option to pick - the label describes the type of cut, not the layer's exact SVG name.
+      </param>
+
+      <param name="help_ls2" type="description">
+• Full Cut - cuts all the way through the material (reads the "Full Cut" layer, uses Cut Pressure)
+      </param>
+
+      <param name="help_ls3" type="description">
+• Kiss Cut - cuts through the top layer only, leaving the backing intact - e.g. vinyl stickers (reads the "Kiss Cut" layer, uses Score Pressure)
+      </param>
+
+      <param name="help_ls3b" type="description">
+• Full Cut &amp; Kiss Cut - runs both on this one tool head: Kiss Cut geometry is cut first (at Score Pressure), then Full Cut geometry is appended right after it (at Cut Pressure) - both still share this side's Speed, Up Speed, Offset, and Overcut
+      </param>
+
+      <param name="help_ls4" type="description">
+• Crease Tool - scores a fold line with no cutting (reads the "Crease" layer, uses Crease / Draw Pressure); offset should be 0
+      </param>
+
+      <param name="help_ls5" type="description">
+• Draw - a pen/marker pass, no cutting (reads the "Draw" layer, uses Crease / Draw Pressure); offset should be 0
+      </param>
+
+      <param name="help_ls6" type="description">
+• None - this tool head isn't used this run
+      </param>
+
+      <param name="help_ls7" type="description">
+Left Tool and Right Tool must not include any of the same real layer (or one/both set to None) - e.g. Left = Full Cut &amp; Kiss Cut and Right = Full Cut is not allowed, since both would touch Full Cut.
+      </param>
+
+    </vbox>
+
+    </page>
+
+    <!-- ================= CUT MODE HELP TAB ================= -->
+    <page name="help_cut_mode" gui-text="Cut Mode">
+
+    <vbox>
+
+      <image width="279" height="117">images/Cut_Mode_279x117.png</image>
+
+      <param name="help_cm1" type="description">
+Cut Mode decides which reference box machine (0,0) is measured from - it doesn't change what gets cut, only where it lands on the material.
+      </param>
+
+      <param name="help_cm2" type="description">
+• Origin Point - uses the bounding box of the artwork itself; the page is ignored entirely
+      </param>
+
+      <param name="help_cm3" type="description">
+• WYSIWYG - uses the SVG page as the reference box, so the artwork's position on the page is preserved on the material
+      </param>
+
+      <param name="help_cm4" type="description">
+• Contour Cut - uses four registration marks in a "Marks" layer as the reference box, for aligning a cut to a separately printed sheet
+      </param>
+
+    </vbox>
+
+    </page>
+
+    <!-- ================= OPERATION MODE HELP TAB ================= -->
+    <page name="help_operation_mode" gui-text="Operation Mode">
+
+    <vbox>
+
+      <image width="284" height="102">images/Operation_ Mode_284x102.png</image>
+
+      <param name="help_om1" type="description">
+Operation Mode only picks which physical tool head runs first - it doesn't change which layer either tool is assigned to (set in Layer Selection).
+      </param>
+
+      <param name="help_om2" type="description">
+• L Tool &gt; R Tool - Left Tool's pass runs first, then Right Tool
+      </param>
+
+      <param name="help_om3" type="description">
+• R Tool &gt; L Tool - Right Tool's pass runs first, then Left Tool
+      </param>
+
+      <param name="help_om4" type="description">
+A tool set to None in Layer Selection is skipped entirely, regardless of this order.
+      </param>
+
+    </vbox>
+
+    </page>
+
+    <!-- ================= ACTION HELP TAB ================= -->
+    <page name="help_action" gui-text="Action">
+
+    <vbox>
+
+      <image width="248" height="219">images/Action_248x219.png</image>
+
+      <param name="help_ac1" type="description">
+Action is one group - exactly one option runs when Apply is clicked.
+      </param>
+
+      <param name="help_ac2" type="description">
+• Send to Machine Wifi - sends the cut/score/crease/draw job straight to the cutter over the network (IP Address / Port)
+      </param>
+
+      <param name="help_ac2b" type="description">
+• Send to Machine USB - sends the same job straight to the cutter over a direct USB connection (USB Device Path); Windows only
+      </param>
+
+      <param name="help_ac3" type="description">
+• Save PLT File Only - writes the same job to a .plt file on disk instead of sending it
+      </param>
+
+      <param name="help_ac4" type="description">
+• Preview Path - opens the HPGL preview viewer (tries a standalone window, falls back to a browser tab)
+      </param>
+
+      <param name="help_ac5" type="description">
+• Preview Path in Web Browser - same viewer, always opened in a normal browser tab
+      </param>
+
+      <param name="help_ac6" type="description">
+• Layer Setup - creates/refreshes the standard Full Cut/Kiss Cut/Crease/Draw/Print/Marks layers only, nothing is cut
+      </param>
+
+      <param name="help_ac7" type="description">
+• Add Marks - replaces the Marks layer with fresh registration marks using Marks Setting, nothing is cut
+      </param>
+
+    </vbox>
+
+    </page>
+
+    <!-- ================= MARKS SETTING HELP TAB ================= -->
+    <page name="help_marks_setting" gui-text="Marks Setting">
+
+    <vbox>
+
+      <image width="260" height="229">images/Mark_Settings_ 260x229.png</image>
+
+      <param name="help_ms1" type="description">
+These fields only take effect when Action is set to Add Marks.
+      </param>
+
+      <param name="help_ms2" type="description">
+• Mark Placement: Offset from Objects - marks sit outside the bounding box of every vector object on the canvas
+      </param>
+
+      <param name="help_ms3" type="description">
+• Mark Placement: Inset from Page Border - marks sit inside the page edge instead
+      </param>
+
+      <param name="help_ms4" type="description">
+• Offset / Inset (mm) - the distance used by whichever Mark Placement mode is selected
+      </param>
+
+      <param name="help_ms5" type="description">
+• Mark Arm Length (mm) - length of each L-shaped corner mark's two arms
+      </param>
+
+      <param name="help_ms6" type="description">
+• Stroke Width (mm) - line thickness of the marks themselves
+      </param>
+
+    </vbox>
+
+    </page>
+
+    <!-- ================= CUTTER CONNECTION HELP TAB ================= -->
+    <page name="help_cutter_connection" gui-text="Cutter Connection Settings">
+
+    <vbox>
+
+      <image width="407" height="278">images/Connection_Settings_407x278.png</image>
+
+      <param name="help_cc1" type="description">
+IP Address and Port only matter when Action is set to Send to Machine Wifi; USB Device Path only matters when Action is set to Send to Machine USB - each is hidden otherwise.
+      </param>
+
+      <param name="help_cc2" type="description">
+• IP Address - the cutter's network address (Send to Machine Wifi)
+      </param>
+
+      <param name="help_cc3" type="description">
+• Port - the TCP port the cutter is listening on (Send to Machine Wifi)
+      </param>
+
+      <param name="help_cc4" type="description">
+A short connection timeout is used for Wifi, so an unreachable cutter fails quickly rather than hanging.
+      </param>
+
+      <param name="help_cc5" type="description">
+• USB Device Path - the cutter's USB device (Send to Machine USB); leave blank to auto-detect - a popup window lets you pick from whatever's found (even just one, as a confirm step), and shows each device's short label. Enter that label here (e.g. skycut_5503) to skip the popup and always send straight to that device. Windows only.
+      </param>
+
+    </vbox>
+
+    </page>
+
+    <!-- ================= GENERAL HELP TAB ================= -->
+    <page name="help" gui-text="Help">
+
+    <vbox>
+
+      <param name="help" type="description"/>
+
+      <param name="help1" type="description">
+Send objects in layers named "Full Cut", "Kiss Cut", "Crease", and/or "Draw" to the cutter.
+      </param>
+
+      <param name="help2" type="description">Rules:</param>
+
+      <param name="help3" type="description">
+• Objects must be inside Full Cut, Kiss Cut, Crease, or Draw layers
+      </param>
+
+      <param name="help4" type="description">
+• Layer names are case-insensitive
+      </param>
+
+      <param name="help6" type="description">
+• Operation Mode picks which physical tool runs first; a tool set to None is skipped entirely
+      </param>
+
+      <param name="help7" type="description">
+• Passes repeat each object before moving to the next
+      </param>
+
+      <param name="help8" type="description">
+• Action: Layer Setup creates/refreshes the standard Full Cut/Kiss Cut/Crease/Draw/Print/Marks layers only
+      </param>
+
+      <param name="help9" type="description">
+• Action: Add Marks replaces the Marks layer with fresh registration marks only, using Marks Setting below it
+      </param>
+
+    </vbox>
+
+    </page>
+
+  </param>
+
+  <!-- ================= EFFECT ================= -->
+
+  <effect needs-live-preview="false">
+
+    <object-type>all</object-type>
+
+    <effects-menu>
+      <submenu name="Skycut Command D24-v4"/>
+    </effects-menu>
+
+  </effect>
+
+  <!-- ================= SCRIPT ================= -->
+
+  <script>
+
+    <command reldir="extensions" interpreter="python">skycut_command_d24_v4.py</command>
+
+  </script>
+
+</inkscape-extension>
